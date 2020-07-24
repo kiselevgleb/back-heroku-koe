@@ -51,6 +51,7 @@ function action() {
 }
 
 router.get('/sse', async (ctx) => {
+  // coin = 0;
   streamEvents(ctx.req, ctx.res, {
     async fetch(lastEventId) {
       return [];
@@ -58,6 +59,7 @@ router.get('/sse', async (ctx) => {
 
     stream(sse) {
         const interval = setInterval(() => {
+          console.log(coin);
           if (coin < 50) {
             let d = action();
             if(d==="freekick"){
