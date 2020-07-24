@@ -51,7 +51,7 @@ function action() {
 }
 
 router.get('/sse', async (ctx) => {
-  // coin = 0;
+  coin = 0;
   streamEvents(ctx.req, ctx.res, {
     async fetch(lastEventId) {
       return [];
