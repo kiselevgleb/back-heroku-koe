@@ -41,7 +41,7 @@ app.use(async (ctx, next) => {
 });
 
 const mas = ["action", "action", "freekick", "action", "goal", "freekick", "action", "freekick", "action", "freekick"];
-const masTotal =[];
+// const masTotal =[];
 let coin = 0;  
 const Router = require('koa-router');
 const router = new Router();
@@ -52,6 +52,7 @@ function action() {
 
 router.get('/sse', async (ctx) => {
   coin = 0;
+  const masTotal =[];
   streamEvents(ctx.req, ctx.res, {
     async fetch(lastEventId) {
       return [];
